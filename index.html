@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xameleon | Студия авторской флористики в Белгороде</title>
+    <meta name="description"
+        content="Студия цветов Xameleon в Белгороде. Авторские букеты с доставкой за 1,5 часа. Рейтинг 4.9 ⭐. Ул. Костюкова, 1А. Тел: +7 (915) 523-24-24">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <!-- Canvas для волнового фона -->
+    <canvas id="wavesCanvas"></canvas>
+
+    <!-- Canvas для анимации лепестков -->
+    <canvas id="petalsCanvas"></canvas>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">Xameleon</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#delivery">Доставка</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <a href="tel:+79155232424" class="nav-btn">+7 (915) 523-24-24</a>
+    </nav>
+
+    <!-- Главный экран -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">⭐ 4.9 · Хорошее место 2026</div>
+            <h1 class="hero-title">Легально вызываем цветовую зависимость</h1>
+            <p class="hero-subtitle">Студия авторской флористики в Белгороде. Свежие букеты с доставкой за 1,5 часа. Все
+                цветы в аква-упаковке с инструкцией по уходу.</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn btn-primary">Посмотреть каталог</a>
+                <a href="tel:+79155232424" class="btn btn-secondary">Заказать букет</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-value">4.9</span>
+                    <span class="stat-label">Рейтинг</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-value">1,5ч</span>
+                    <span class="stat-label">Доставка</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-value">10%</span>
+                    <span class="stat-label">Скидка на 1-й заказ</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="image\main.png"
+                alt="Авторский букет Xameleon" class="hero-img">
+            <div class="hero-glow"></div>
+        </div>
+    </header>
+
+    <!-- Раздел с преимуществами -->
+    <section class="features" id="about">
+        <h2 class="section-title features-title">Почему выбирают нас</h2>
+        <div class="features-grid">
+
+            <div class="feature-card anim-card" data-tilt>
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap">
+                    <!-- Цветок розы -->
+                    <svg class="feature-svg" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="30" stroke="url(#grad1)" stroke-width="1.5" opacity="0.25" />
+                        <path d="M32 18C28 18 24 22 24 26C24 30 28 34 32 38C36 34 40 30 40 26C40 22 36 18 32 18Z"
+                            fill="url(#grad1)" opacity="0.7" />
+                        <path
+                            d="M22 28C18 28 14 32 14 36C14 40 22 44 32 48C42 44 50 40 50 36C50 32 46 28 42 28C38 28 36 30 32 34C28 30 26 28 22 28Z"
+                            fill="url(#grad1)" opacity="0.5" />
+                        <line x1="32" y1="38" x2="32" y2="54" stroke="#6b8f5e" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M32 44C28 42 26 38 24 36" stroke="#6b8f5e" stroke-width="1.5" fill="none"
+                            stroke-linecap="round" />
+                        <defs>
+                            <linearGradient id="grad1" x1="16" y1="16" x2="48" y2="48">
+                                <stop offset="0%" stop-color="#ff6b9d" />
+                                <stop offset="100%" stop-color="#c9184a" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>Свежесть</h3>
+                <p>Прямые поставки с лучших плантаций Эквадора и Кении. Каждый цветок в аква-паке с водой — доедет
+                    свежим.</p>
+                <div class="feature-number">01</div>
+            </div>
+
+            <div class="feature-card anim-card" data-tilt>
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap">
+                    <!-- Палитра / кисть -->
+                    <svg class="feature-svg" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="30" stroke="url(#grad2)" stroke-width="1.5" opacity="0.25" />
+                        <ellipse cx="30" cy="30" rx="18" ry="14" fill="none" stroke="url(#grad2)" stroke-width="2"
+                            transform="rotate(-15 30 30)" />
+                        <circle cx="22" cy="26" r="3" fill="#ff6b9d" opacity="0.8" />
+                        <circle cx="30" cy="22" r="2.5" fill="#c6a87c" opacity="0.8" />
+                        <circle cx="38" cy="26" r="3" fill="#e8d5b7" opacity="0.8" />
+                        <circle cx="24" cy="34" r="2.5" fill="#c9184a" opacity="0.7" />
+                        <path d="M40 32C42 34 46 40 48 44C50 48 44 50 42 46C40 42 38 36 40 32Z" fill="url(#grad2)"
+                            opacity="0.9" />
+                        <defs>
+                            <linearGradient id="grad2" x1="0" y1="0" x2="64" y2="64">
+                                <stop offset="0%" stop-color="#c6a87c" />
+                                <stop offset="100%" stop-color="#e8d5b7" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>Авторский стиль</h3>
+                <p>Уникальные композиции от флористов-чемпионов. Каждый букет — произведение искусства с именем и
+                    характером.</p>
+                <div class="feature-number">02</div>
+            </div>
+
+            <div class="feature-card anim-card" data-tilt>
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap">
+                    <!-- Фургон доставки -->
+                    <svg class="feature-svg" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="30" stroke="url(#grad3)" stroke-width="1.5" opacity="0.25" />
+                        <rect x="8" y="24" width="30" height="18" rx="2" fill="url(#grad3)" opacity="0.6" />
+                        <path d="M38 28H48C50 28 52 30 54 34L56 38V42H38V28Z" fill="url(#grad3)" opacity="0.8" />
+                        <circle cx="20" cy="44" r="4" fill="none" stroke="#fff" stroke-width="2" />
+                        <circle cx="20" cy="44" r="1.5" fill="#fff" opacity="0.8" />
+                        <circle cx="48" cy="44" r="4" fill="none" stroke="#fff" stroke-width="2" />
+                        <circle cx="48" cy="44" r="1.5" fill="#fff" opacity="0.8" />
+                        <line x1="24" y1="42" x2="44" y2="42" stroke="#fff" stroke-width="1.5" opacity="0.4" />
+                        <path d="M16 28L20 20L24 28" stroke="#6b8f5e" stroke-width="1.5" fill="none"
+                            stroke-linecap="round" />
+                        <defs>
+                            <linearGradient id="grad3" x1="0" y1="0" x2="64" y2="64">
+                                <stop offset="0%" stop-color="#ff6b9d" />
+                                <stop offset="100%" stop-color="#c6a87c" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3>Доставка 24/7</h3>
+                <p>Бережная доставка по всему Белгороду за 1,5 часа. Букет в защитном боксе-переноске — сюрприз в любое
+                    время.</p>
+                <div class="feature-number">03</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Каталог -->
+    <section class="catalog-preview" id="catalog">
+        <h2 class="section-title">Наши букеты</h2>
+        <div class="catalog-grid">
+            <div class="product-card">
+                <div class="product-img-ph product-img-1">
+                    <->
+                    <img src="image\svezhest.jpg"
+                        class="product-photo" alt="Свежесть">
+                    <span class="product-tag">Хит</span>
+                </div>
+                <div class="product-info">
+                    <h4>Свежесть</h4>
+                    <p class="product-desc">Ажурные розы, нежная палитра</p>
+                    <p class="price"> ₽</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-ph product-img-2">
+                    <!-- Чтобы вставить своё фото, замените ссылку ниже -->
+                    <img src="image\rosebomb.jpg"
+                        class="product-photo" alt="Розовая бомбочка">
+                    <span class="product-tag">Новинка</span>
+                </div>
+                <div class="product-info">
+                    <h4>Розовая бомбочка</h4>
+                    <p class="product-desc">Французские пионовидные розы</p>
+                    <p class="price">7 200 ₽</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-ph product-img-3">
+                    <img src="image\hatbox.jpg"
+                        class="product-photo" alt="Шляпная коробочка">
+                    <span class="product-tag">Premium</span>
+                </div>
+                <div class="product-info">
+                    <h4>Шляпная коробочка</h4>
+                    <p class="product-desc">Изысканная композиция</p>
+                    <p class="price">5 000 ₽</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-ph product-img-4">
+                    <img src="image\yagodny.jpg"
+                        class="product-photo" alt="Ягодный">
+                </div>
+                <div class="product-info">
+                    <h4>Ягодный</h4>
+                    <p class="product-desc">Нежный авторский букет</p>
+                    <p class="price">2 500 ₽</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-ph product-img-5">
+                    <img src="image\alisa.jpg"
+                        class="product-photo" alt="Алиса">
+                </div>
+                <div class="product-info">
+                    <h4>Алиса</h4>
+                    <p class="product-desc">Кустовые розы, эустома</p>
+                    <p class="price">2 500 ₽</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-ph product-img-6">
+                    <img src="image\flowerbag.jpg"
+                        class="product-photo" alt="Цветочная сумочка">
+                </div>
+                <div class="product-info">
+                    <h4>Цветочная сумочка</h4>
+                    <p class="product-desc">Роза, матиола, эустома, хризантема</p>
+                    <p class="price">2 450 ₽</p>
+                </div>
+            </div>
+        </div>
+        <div class="catalog-cta">
+            <p>Ещё 100+ букетов в нашем VK</p>
+            <a href="https://vk.com/xameleon_belgorod" target="_blank" class="btn btn-primary">Смотреть все →</a>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="features" id="services">
+        <h2 class="section-title features-title">Наши услуги</h2>
+        <div class="features-grid features-grid--4">
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">💍</span></div>
+                <h3>Свадебная флористика</h3>
+                <p>Букеты невест, арки, декор зала — создадим атмосферу вашего дня</p>
+                <div class="feature-number">01</div>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">🎁</span></div>
+                <h3>Подарочные сертификаты</h3>
+                <p>Идеальный подарок на любой повод — сертификат на букет мечты</p>
+                <div class="feature-number">02</div>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">🧸</span></div>
+                <h3>Игрушки и декор</h3>
+                <p>Кашпо, дизайнерские открытки, сухоцветы и мягкие игрушки</p>
+                <div class="feature-number">03</div>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">🎀</span></div>
+                <h3>Программа лояльности</h3>
+                <p>Скидка 10% на первый заказ и накопительные бонусы постоянным клиентам</p>
+                <div class="feature-number">04</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Доставка -->
+    <section class="features" id="delivery">
+        <h2 class="section-title features-title">Доставка по Белгороду</h2>
+        <div class="features-grid features-grid--3 features-grid--center">
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">⏱️</span></div>
+                <h3>За 1,5 часа</h3>
+                <p>Доставка день в день по всему городу</p>
+                <div class="feature-number">01</div>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">💧</span></div>
+                <h3>Аква-упаковка</h3>
+                <p>Все букеты в аква-паках с водой — цветы доедут свежими</p>
+                <div class="feature-number">02</div>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">📦</span></div>
+                <h3>Защитный бокс</h3>
+                <p>Переноска-бокс защитит форму и лепестки в пути</p>
+                <div class="feature-number">03</div>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">📋</span></div>
+                <h3>Инструкция по уходу</h3>
+                <p>В комплекте — средство для продления жизни цветов</p>
+                <div class="feature-number">04</div>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">💳</span></div>
+                <h3>Удобная оплата</h3>
+                <p>QR-код, карта, наличные или предоплата</p>
+                <div class="feature-number">05</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="features" id="contacts">
+        <h2 class="section-title features-title">Контакты</h2>
+        <div class="features-grid features-grid--4">
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">📍</span></div>
+                <h3>Адрес</h3>
+                <p>г. Белгород,<br>ул. Костюкова, 1А<br><span class="contact-note">Вход со стороны парковки</span></p>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">⏰</span></div>
+                <h3>Режим работы</h3>
+                <p>Ежедневно<br><strong>09:00 — 20:00</strong><br><span class="contact-note">Без выходных</span></p>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">📞</span></div>
+                <h3>Телефоны</h3>
+                <p>
+                    <a href="tel:+79155232424" class="contact-link">+7 (915) 523-24-24</a><br>
+                    <a href="tel:+79155750365" class="contact-link">+7 (915) 575-03-65</a>
+                </p>
+            </div>
+            <div class="feature-card anim-card">
+                <div class="feature-card-glow"></div>
+                <div class="feature-icon-wrap"><span class="feature-emoji">💬</span></div>
+                <h3>Соцсети</h3>
+                <p>
+                    <a href="https://vk.com/xameleon_belgorod" target="_blank" class="contact-link">ВКонтакте</a><br>
+                    <a href="https://instagram.com/xameleon_belgorod" target="_blank"
+                        class="contact-link">Instagram</a><br>
+                    <a href="https://t.me/xameleon_belgorod" target="_blank" class="contact-link">Telegram</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Карта -->
+    <section class="map-section">
+        <div class="map-wrapper">
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A&amp;source=constructor&amp;ll=36.570250%2C50.577376&amp;z=16&amp;pt=36.570250%2C50.577376,pm2rdm"
+                width="100%" height="400" frameborder="0" allowfullscreen="true" style="border-radius: 12px;"
+                title="Карта — Xameleon, ул. Костюкова 1А, Белгород"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <span class="footer-logo">Xameleon</span>
+            <p>г. Белгород, ул. Костюкова, 1А · <a href="tel:+79155232424">+7 (915) 523-24-24</a></p>
+            <p>&copy; 2026 Студия цветов Xameleon. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
